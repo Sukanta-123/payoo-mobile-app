@@ -67,7 +67,7 @@ transaction.addEventListener("click", () => {
   for (const data of transactionData) {
     const div = document.createElement("div");
     div.innerHTML = `
-      <div
+          <div
             class="bg-white rounded-2xl p-3 flex justify-between items-center mb-4"
           >
             <div class="flex items-center">

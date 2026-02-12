@@ -5,7 +5,7 @@ loginBtn.addEventListener("click", (e) => {
   let mobileField = document.getElementById("mbl-field").value;
   let pinField = document.getElementById("pin-field").value;
   const mblNumber = 18422313410;
-  const pinNmb = 12192;
+  const pinNmb = 1219;
   const mblNumberCnv = parseInt(mobileField);
   const pinNumberCnv = parseInt(pinField);
   if (mblNumberCnv === mblNumber && pinNumberCnv === pinNmb) {

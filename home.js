@@ -1,6 +1,6 @@
 // My Pin & discount coupon
 
-const myPin = 12192;
+const myPin = 1219;
 const discountCoupon = "newUser";
 const transactionData = [];
 

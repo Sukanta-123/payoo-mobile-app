@@ -58,6 +58,8 @@ payment.addEventListener("click", () => {
 });
 
 transaction.addEventListener("click", () => {
+  const transactionHeading =document.getElementById('transactions-text')
+  transactionHeading.innerText='Transactions'
   handleToggle("transactions-parent");
   handleBtnToggle(transaction);
   const transactionContainer = document.getElementById(

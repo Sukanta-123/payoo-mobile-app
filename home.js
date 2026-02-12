@@ -1,6 +1,6 @@
 // My Pin & discount coupon
 
-const myPin = 121922;
+const myPin = 12192;
 const discountCoupon = "newUser";
 const transactionData = [];
 
@@ -63,7 +63,7 @@ transaction.addEventListener("click", () => {
   const transactionContainer = document.getElementById(
     "transactions-container",
   );
-  transactionContainer.innerText=''
+  transactionContainer.innerText = "";
   for (const data of transactionData) {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -82,7 +82,7 @@ transaction.addEventListener("click", () => {
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
      `;
-    transactionContainer.appendChild(div)
+    transactionContainer.appendChild(div);
   }
 });
 
@@ -140,9 +140,9 @@ addMoneyBtn.addEventListener("click", () => {
   const acNum = inputValue("account-number");
   const addedMoney = inputValueNumber("add-money");
 
-  if (addedMoney <= 0){
-    alert('Invalid amount')
-    return
+  if (addedMoney <= 0) {
+    alert("Invalid amount");
+    return;
   }
 
   const pinNum = inputValueNumber("add-pin");
@@ -163,7 +163,7 @@ addMoneyBtn.addEventListener("click", () => {
 
   setInnerText(totalNewBalance);
 
-  nameDate('Add Money')
+  nameDate("Add Money");
 });
 
 // withdraw money
@@ -174,12 +174,11 @@ removeBtn.addEventListener("click", () => {
   const withDrawMoney = inputValueNumber("remove-money");
   const currentBalance = inputValueInnerText("curr-balance");
 
-  if(withDrawMoney>currentBalance || withDrawMoney<=0){
-    alert('Invalid Amount')
-    return
+  if (withDrawMoney > currentBalance || withDrawMoney <= 0) {
+    alert("Invalid Amount");
+    return;
   }
   const pin = inputValueNumber("second-pin");
-  
 
   const totalNewBalance = currentBalance - withDrawMoney;
 
@@ -196,7 +195,7 @@ removeBtn.addEventListener("click", () => {
 
   setInnerText(totalNewBalance);
 
-  nameDate('Cash Out Money')
+  nameDate("Cash Out Money");
 });
 
 // Transfer Money
@@ -205,8 +204,12 @@ const transferBtn = btnId("send-money-btn");
 transferBtn.addEventListener("click", () => {
   const userNumber = inputValue("user-number");
   const transferMoney = inputValueNumber("transfer-money");
-  const pin = inputValueNumber("third-pin");
   const currentBalance = inputValueInnerText("curr-balance");
+  if (transferMoney > currentBalance || transferMoney <= 0) {
+    alert("Invalid Amount");
+    return;
+  }
+  const pin = inputValueNumber("third-pin");
 
   const totalNewBalance = currentBalance - transferMoney;
 
@@ -222,8 +225,8 @@ transferBtn.addEventListener("click", () => {
   }
 
   setInnerText(totalNewBalance);
-  
-  nameDate('Transfer Money')
+
+  nameDate("Transfer Money");
 });
 
 // Coupon
@@ -246,8 +249,12 @@ paymentBtn.addEventListener("click", () => {
   const organizations = inputValue("organizations");
   const acNum = inputValue("ac-number");
   const AmountToPayMoney = inputValueNumber("pay-money");
-  const pin = inputValueNumber("fourth-pin");
   const currentBalance = inputValueInnerText("curr-balance");
+  if (AmountToPayMoney > currentBalance || AmountToPayMoney <= 0) {
+    alert("Invalid Amount");
+    return;
+  }
+  const pin = inputValueNumber("fourth-pin");
 
   const totalNewBalance = currentBalance - AmountToPayMoney;
 
@@ -264,5 +271,5 @@ paymentBtn.addEventListener("click", () => {
 
   setInnerText(totalNewBalance);
 
-  nameDate('Pay Bill')
+  nameDate("Pay Bill");
 });

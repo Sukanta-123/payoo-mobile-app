@@ -58,8 +58,8 @@ payment.addEventListener("click", () => {
 });
 
 transaction.addEventListener("click", () => {
-  const transactionHeading =document.getElementById('transactions-text')
-  transactionHeading.innerText='Transactions'
+  const transactionHeading = document.getElementById("transactions-text");
+  transactionHeading.innerText = "Transactions";
   handleToggle("transactions-parent");
   handleBtnToggle(transaction);
   const transactionContainer = document.getElementById(
@@ -164,6 +164,8 @@ addMoneyBtn.addEventListener("click", () => {
   }
 
   setInnerText(totalNewBalance);
+  alert(`You've added ${addedMoney} BDT to your account
+Your current balance is ${totalNewBalance} BDT`)
 
   nameDate("Add Money");
 });
@@ -196,7 +198,8 @@ removeBtn.addEventListener("click", () => {
   }
 
   setInnerText(totalNewBalance);
-
+  alert(`You've been withdrew ${withDrawMoney} BDT 
+Your current balance is ${totalNewBalance} BDT`);
   nameDate("Cash Out Money");
 });
 
@@ -227,7 +230,8 @@ transferBtn.addEventListener("click", () => {
   }
 
   setInnerText(totalNewBalance);
-
+  alert(`You've been transferred ${transferMoney} BDT 
+Your current balance is ${totalNewBalance} BDT`);
   nameDate("Transfer Money");
 });
 
@@ -240,7 +244,7 @@ couponBtn.addEventListener("click", () => {
   if (coupon !== discountCoupon) {
     alert("Please provide a valid coupon");
   } else {
-    alert("Your discount coupon has added");
+    alert("Your discount coupon has been applied");
   }
 });
 
@@ -272,6 +276,7 @@ paymentBtn.addEventListener("click", () => {
   }
 
   setInnerText(totalNewBalance);
-
+  alert(`You've been payed ${AmountToPayMoney} BDT 
+Your current balance is ${totalNewBalance} BDT`);
   nameDate("Pay Bill");
 });

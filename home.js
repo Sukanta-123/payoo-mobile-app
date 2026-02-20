@@ -21,7 +21,7 @@ function handleToggle(id) {
   document.getElementById(id).style.display = "block";
 }
 
-//  function to toggle buttons
+//  function to toggle buttons border color
 
 function handleBtnToggle(btn) {
   const formBtns = document.getElementsByClassName("form-btn");
